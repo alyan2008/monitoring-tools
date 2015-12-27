@@ -1,0 +1,8 @@
+[monitoring_servers]
+www.dev.example.com
+
+[dev:children]
+monitoring_servers
+
+[example:children]
+dev

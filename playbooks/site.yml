@@ -1,0 +1,9 @@
+---
+- include: ./plays/ansible-mysql.yml
+- include: ./plays/ansible-nginx.yml
+- include: ./plays/ansible-php-fpm.yml
+- include: ./plays/ansible-icinga2-no-ui.yml
+- include: ./plays/ansible-icinga2-web2-ui.yml
+- include: ./plays/ansible-influxdb.yml
+- include: ./plays/ansible-graphite-api-influxdb.yml
+- include: ./plays/ansible-grafana.yml
