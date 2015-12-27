@@ -20,7 +20,7 @@ key_access:
 	chmod 600 ./keys/vagrant*
 
 hostname: key_access
-	echo  "10.0.1.2 ${HOSTNAME}" >> /etc/hosts && echo "[monitoring_servers]" >> ./inventory/dev/hosts && echo "${HOSTNAME}" >> ./inventory/dev/hosts
+	echo "" >> ./inventory/dev/hosts && echo  "10.0.1.2 ${HOSTNAME}" >> /etc/hosts && echo "[monitoring_servers]" >> ./inventory/dev/hosts && echo "${HOSTNAME}" >> ./inventory/dev/hosts && echo "[dev:children]" >> ./inventory/dev/hosts && echo "monitoring_servers" >> /inventory/dev/hosts && echo "[example:children]" >> ./inventory/dev/hosts && echo "dev" >> ./inventory/dev/hosts
 
 basebox: hostname
 	cd vagrant/boxcutter/ubuntu && make virtualbox/ubuntu1404 HOSTNAME=${HOSTNAME} DISK_SIZE=${DISK_SIZE} MEMSIZE=${MEMSIZE}&& vagrant box add icekernel/trusty64 box/virtualbox/ubuntu1404-nocm-2.0.2.box
